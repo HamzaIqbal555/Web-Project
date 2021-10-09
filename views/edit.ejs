@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="nav-header">
+        <a class="navbar-brand" href="/Campgrounds">YelpCamp</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Sign Up</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Edit <%= campground.name %>
+      </h1>
+
+      <div style="width: 30%; margin: 25px auto;">
+        <form action="/Campgrounds/update/<%= campground._id %>" method="POST">
+          <div class="form-group">
+            <input class="form-control" type="text" name="campground[name]" value="<%= campground.name %>">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="campground[image]" value="<%= campground.image %>">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="campground[description]"
+              value="<%= campground.description %>">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>
+          </div>
+          <div>
+            <a href="/Campgrounds" class="btn-btn-danger">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
